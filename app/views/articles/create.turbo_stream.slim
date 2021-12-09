@@ -1,0 +1,8 @@
+- if @article.errors.present?
+  = notice_stream(message: :error, status: 'danger')
+  = form_article_stream(article: @article)
+- else
+  = notice_stream(message: :create, status: 'success')
+  = turbo_stream.replace :new_article do
+    = turbo_frame_tag :new_article
+  = turbo_stream.prepend 'articles', partial: 'article', locals: { article: @article }

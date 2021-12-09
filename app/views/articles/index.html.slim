@@ -1,0 +1,11 @@
+h1 Listing articles
+
+.d-flex.justify-content-end
+  = link_to 'New Article', new_article_path, class: 'btn btn-link', data: { 'turbo-frame': 'new_article' }
+
+= turbo_frame_tag :new_article
+
+= turbo_stream_from :articles
+= turbo_frame_tag :articles, class: 'row' do
+  = render partial: 'article', collection: @articles
+

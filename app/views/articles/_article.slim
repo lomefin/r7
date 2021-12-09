@@ -1,0 +1,8 @@
+= turbo_frame_tag dom_id(article), class: 'col-12 col-lg-6' do
+  article.card.card-body.mb-5
+    h1 = article.title
+    p == article.content
+    .card-footer
+      .d-flex.justify-content-end.align-items-center
+        p.me-3 Likes: #{article.likes}
+        = button_to 'Like', like_article_path(article), method: :put, class: 'btn btn-success'

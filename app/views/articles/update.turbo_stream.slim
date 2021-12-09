@@ -1,0 +1,6 @@
+- if @article.errors.present?
+  = notice_stream(message: :error, status: 'danger')
+  = form_article_stream(article: @article)
+- else
+  = notice_stream(message: :update, status: 'success')
+  = turbo_stream.replace dom_id(@article), partial: 'article', locals: { article: @article }

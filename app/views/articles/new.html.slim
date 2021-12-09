@@ -1,0 +1,11 @@
+
+
+= turbo_frame_tag :new_article do
+
+  .card
+    .card-body
+      h1.card-title New article
+    .card-body
+      == render 'form', article: @article
+    .card-footer
+      = link_to 'Back', articles_path

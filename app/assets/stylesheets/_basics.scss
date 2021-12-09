@@ -1,0 +1,21 @@
+form {
+  .field {
+    @extend .mb-2;
+    
+    label {
+      @extend .form-label;
+    }
+    input, textarea {
+      @extend .form-control;
+    }
+  }
+  .actions {
+    input[type='submit'] {
+      @extend .btn;
+      @extend .btn-primary;
+    }
+  }
+}
+.trix-content {
+  border: 1px solid black;
+}

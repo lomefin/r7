@@ -1,0 +1,7 @@
+- if @article.errors.present?
+  = notice_stream(message: :error, status: 'danger')
+- else
+  = notice_stream(message: :like, status: 'success')
+  - Rails.logger.info @article.inspect
+  - Rails.logger.info dom_id(@article)
+  = turbo_stream.replace dom_id(@article), partial: 'article', locals: { article: @article }
